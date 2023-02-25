@@ -71,9 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\yiit\Documents\Visual Studio 2022\SDL2_image-devel-2.6.2-VC\SDL2_image-2.6.2\include;C:\Users\yiit\Documents\Visual Studio 2022\SDL2-devel-2.26.2-VC\SDL2-2.26.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\yiit\Documents\Visual Studio 2022\SDL2_image-devel-2.6.2-VC\SDL2_image-2.6.2\lib\x64;C:\Users\yiit\Documents\Visual Studio 2022\SDL2-devel-2.26.2-VC\SDL2-2.26.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\yiit\source\repos\geym\geym\include\SDL2-2.26.2\include;C:\Users\yiit\source\repos\geym\geym\include\SDL2_image-2.6.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\yiit\source\repos\geym\geym\lib\SDL2_image\lib\x64;C:\Users\yiit\source\repos\geym\geym\lib\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
     <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -114,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yiit\Documents\Visual Studio 2022\SDL2_image-devel-2.6.2-VC\SDL2_image-2.6.2\lib\x64;C:\Users\yiit\Documents\Visual Studio 2022\SDL2-devel-2.26.2-VC\SDL2-2.26.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\yiit\source\repos\geym\geym\lib\SDL2_image\lib\x64;C:\Users\yiit\source\repos\geym\geym\lib\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -135,21 +136,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Collision.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="KeyboardHandling.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="src\Collision.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\KeyboardHandling.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collision.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="KeyboardHandling.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="include\Collision.h" />
+    <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\KeyboardHandling.h" />
+    <ClInclude Include="include\Map.h" />
+    <ClInclude Include="include\TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

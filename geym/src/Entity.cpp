@@ -1,5 +1,5 @@
-#include "Entity.h"
-#include "Game.h"
+#include "../include/Entity.h"
+#include "../include/Game.h"
 
 SDL_RendererFlip Entity::direction = SDL_FLIP_NONE;
 
