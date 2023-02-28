@@ -6,7 +6,7 @@ SDL_Renderer* Game::renderer{ nullptr };
 bool Game::isRunning = false;
 
 KeyboardHandling handler;
-Map* map {};
+Map* map {nullptr};
 
 Game::Game() : window{ nullptr } {}
 Game::~Game() {}
