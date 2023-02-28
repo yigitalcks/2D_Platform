@@ -54,12 +54,12 @@ void Map::renderMap() {
 		for (int j = 0; j < 32; j++) {
 			destR.x = j * 40;
 
-			int textType = lvl1[i][j];
+			int textType = map[i][j];
 
 			switch (textType)
 			{
 			case 1:
-				SDL_RenderCopy(Game::renderer, dirt, &srcR, &destR);
+				TextureManager::draw(grass, &srcR, &destR);
 				break;
 			case 0:
 				TextureManager::draw(dirt, &srcR, &destR);

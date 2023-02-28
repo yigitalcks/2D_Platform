@@ -6,7 +6,7 @@ SDL_Renderer* Game::renderer{ nullptr };
 bool Game::isRunning = false;
 
 KeyboardHandling handler;
-Map map;
+Map* map {};
 
 Game::Game() : window{ nullptr } {}
 Game::~Game() {}
@@ -30,6 +30,7 @@ int Game::init(const char* title, int width, int height) {
 	}
 
 	std::unique_ptr<Entity> entity(new Entity("assets/Warrior_Idle.png", 0, 0));
+	map = new Map();
 	Game::entity_list.push_back(std::move(entity));
 
 	return 0;
@@ -37,7 +38,7 @@ int Game::init(const char* title, int width, int height) {
 
 void Game::render() {
 	SDL_RenderClear(renderer);
-	map.renderMap();
+	map->renderMap();
 	for (auto& x : Game::entity_list) {
 		x->render();
 	}
@@ -60,6 +61,7 @@ bool Game::running() {
 }
 
 void Game::clear() {
+	delete map;
 	SDL_DestroyRenderer(Game::renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
