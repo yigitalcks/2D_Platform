@@ -61,8 +61,8 @@ bool Game::running() {
 }
 
 void Game::clear() {
-	delete map;
 	SDL_DestroyRenderer(Game::renderer);
 	SDL_DestroyWindow(window);
+	delete map;
 	SDL_Quit();
 }
