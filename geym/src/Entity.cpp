@@ -1,9 +1,7 @@
 #include "../include/Entity.h"
 #include "../include/Game.h"
 
-SDL_RendererFlip Entity::direction = SDL_FLIP_NONE;
-
-Entity::Entity(const char* filename, int pix_x, int pix_y): state { 0 }{
+Entity::Entity(const char* filename, int pix_x, int pix_y) : state{ 0 }, direction{SDL_FLIP_NONE} {
 	texture[0] = TextureManager::LoadTexture(filename);
 	texture[1] = TextureManager::LoadTexture("assets/Warrior_Run_1.png");
 	texture[2] = TextureManager::LoadTexture("assets/Warrior_Run_2.png");
@@ -41,6 +39,9 @@ SDL_Rect& Entity::getDestRect() {
 }
 int Entity::getState() {
 	return state;
+}
+void Entity::setDirection(SDL_RendererFlip flip) {
+	direction = flip;
 }
 
 void Entity::setVelocityX(vel vel) {

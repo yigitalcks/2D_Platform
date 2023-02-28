@@ -1,8 +1,8 @@
 #include <iostream>
 #include "../include/Game.h"
 
-std::vector<std::unique_ptr<Entity>> Game::entity_list{};
-SDL_Renderer* Game::renderer{ nullptr };
+std::vector<std::unique_ptr<Entity>> Game::entity_list;
+SDL_Renderer* Game::renderer = nullptr;
 bool Game::isRunning = false;
 
 KeyboardHandling handler;

@@ -4,7 +4,7 @@
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 720
 
-Game* game = nullptr;
+Game* game{ nullptr };
 
 
 int main(int argc, char** argv) {
@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
 	}
 
 	game->clear();
+	delete game;
 
 	return 0;
 }

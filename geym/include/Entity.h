@@ -21,17 +21,18 @@ public:
 	int getState();
 	void changeState();
 	void setState(int state);
+	void setDirection(SDL_RendererFlip flip);
 
 	void setVelocityX(vel vel);
 	void setVelocityY(vel vel);
 
-	static SDL_RendererFlip direction;
 private:
 	struct{
 		vel x{ZERO};
 		vel y{ZERO};
 	} Velocity;
 
+	SDL_RendererFlip direction;
 	SDL_Texture* texture[9];
 	int state;
 
