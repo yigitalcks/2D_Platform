@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\yiit\source\repos\geym\geym\include\SDL2-2.26.2\include;C:\Users\yiit\source\repos\geym\geym\include\SDL2_image-2.6.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)geym\include</IncludePath>
     <LibraryPath>C:\Users\yiit\source\repos\geym\geym\lib\SDL2_image\lib\x64;C:\Users\yiit\source\repos\geym\geym\lib\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
     <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)</OutDir>
@@ -110,12 +110,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\yiit\Documents\Visual Studio 2022\SDL2_image-devel-2.6.2-VC\SDL2_image-2.6.2\include;C:\Users\yiit\Documents\Visual Studio 2022\SDL2-devel-2.26.2-VC\SDL2-2.26.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)geym\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yiit\source\repos\geym\geym\lib\SDL2_image\lib\x64;C:\Users\yiit\source\repos\geym\geym\lib\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)geym\include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

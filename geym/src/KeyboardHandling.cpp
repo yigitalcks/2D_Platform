@@ -1,5 +1,5 @@
-#include "../include/KeyboardHandling.h"
-#include "../include/Game.h"
+#include "KeyboardHandling.h"
+#include "Game.h"
 
 void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 	SDL_PollEvent(&event);

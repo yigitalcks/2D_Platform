@@ -1,5 +1,5 @@
-#include "../include/Map.h"
-#include "../include/Game.h"
+#include "Map.h"
+#include "Game.h"
 
 
 int lvl1[18][32] = {

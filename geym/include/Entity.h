@@ -1,8 +1,9 @@
 #pragma once
-#include "SDL.h"
 
 #define ENTITY_WIDTH 80
 #define ENTITY_HEIGHT 80
+
+#include "SDL2/SDL.h"
 
 class Entity {
 

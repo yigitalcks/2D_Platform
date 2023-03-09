@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Game.h"
+#include "Game.h"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 720

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Game.h"
+#include "Game.h"
 
 std::vector<std::unique_ptr<Entity>> Game::entity_list;
 SDL_Renderer* Game::renderer = nullptr;

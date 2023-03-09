@@ -1,5 +1,5 @@
-#include "../include/Entity.h"
-#include "../include/Game.h"
+#include "Entity.h"
+#include "Game.h"
 
 Entity::Entity(const char* filename, int pix_x, int pix_y) : state{ 0 }, direction{SDL_FLIP_NONE} {
 	texture[0] = TextureManager::LoadTexture(filename);
