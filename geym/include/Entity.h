@@ -1,7 +1,7 @@
 #pragma once
 
-#define ENTITY_WIDTH 80
-#define ENTITY_HEIGHT 80
+constexpr auto ENTITY_WIDTH = 80;
+constexpr auto ENTITY_HEIGHT = 80;
 
 #include "SDL2/SDL.h"
 

@@ -19,10 +19,9 @@ void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 			entity->setDirection(SDL_FLIP_HORIZONTAL);
 			if (entity->getState() != 8) {
 				entity->changeState();
-			} 
-			else {
-				entity->setState(1);
+				break;
 			}
+			entity->setState(1);
 			break;
 		//case SDLK_s:
 		//	entity->setVelocityY(Entity::ONE);
@@ -32,10 +31,9 @@ void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 			entity->setDirection(SDL_FLIP_NONE);
 			if (entity->getState() != 8) {
 				entity->changeState();
+				break;
 			}
-			else {
-				entity->setState(1);
-			}
+			entity->setState(1);
 			break;
 		default:
 			break;
@@ -43,8 +41,7 @@ void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 	}
 
 	else if (event.type == SDL_KEYUP) {
-		switch (event.key.keysym.sym)
-		{
+		switch (event.key.keysym.sym) {
 		//case SDLK_w:
 		//	entity->setVelocityY(Entity::ZERO);
 		//	break;
@@ -52,10 +49,9 @@ void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 			entity->setVelocityX(Entity::vel::ZERO);
 			if (entity->getState() < 8 && entity->getState() > 0) {
 				entity->setState(0);
+				break;
 			}
-			else {
-				entity->setState(0);
-			}
+			entity->setState(0);
 			break;
 		//case SDLK_s:
 		//	entity->setVelocityY(Entity::ZERO);
@@ -64,10 +60,9 @@ void KeyboardHandling::handle(std::unique_ptr<Entity>& entity) {
 			entity->setVelocityX(Entity::vel::ZERO);
 			if (entity->getState() < 8 && entity->getState() > 0) {
 				entity->setState(0);
+				break;
 			}
-			else {
-				entity->setState(0);
-			}
+			entity->setState(0);
 			break;
 		default:
 			

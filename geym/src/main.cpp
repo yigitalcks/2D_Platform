@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Game.h"
 
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 720
+constexpr auto WINDOW_WIDTH = 1280;
+constexpr auto WINDOW_HEIGHT = 720;
 
 Game* game{ nullptr };
 
@@ -16,7 +16,9 @@ int main(int argc, char** argv) {
 	int frameTime;
 
 	game = new Game();
-	game->init("GameWindow", WINDOW_WIDTH, WINDOW_HEIGHT);
+	if (game->init("GameWindow", WINDOW_WIDTH, WINDOW_HEIGHT)) {
+		return -1;
+	}
 
 	while (game->running())
 	{
