@@ -37,24 +37,39 @@ SDL_Rect& Entity::getSrcRect() {
 SDL_Rect& Entity::getDestRect() {
 	return Rects.dest;
 }
-int Entity::getState() {
+int Entity::getState() const {
 	return state;
 }
 void Entity::setDirection(SDL_RendererFlip flip) {
 	direction = flip;
 }
 
-void Entity::setVelocityX(vel vel) {
-	Velocity.x = vel;
+void Entity::increaseVelX() {
+	Velocity.x++;
 }
 
-void Entity::setVelocityY(vel vel) {
+void Entity::decreaseVelX() {
+	Velocity.x--;
+}
+
+void Entity::setVelX(int vel) {
+	Velocity.x = vel;
+}
+void Entity::setVelY(int vel) {
 	Velocity.y = vel;
 }
+
+int Entity::getVelocityX() {
+	return Velocity.x;
+}
+
 void Entity::setState(int state) {
 	this->state = state;
 }
 
-void Entity::changeState() {
+void Entity::increaseState() {
 	state++;
+}
+void Entity::decreaseState() {
+	state--;
 }

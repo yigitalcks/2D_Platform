@@ -3,6 +3,9 @@
 constexpr auto ENTITY_WIDTH = 80;
 constexpr auto ENTITY_HEIGHT = 80;
 
+constexpr auto MAX_VEL = 4;
+constexpr auto MIN_VEL = -4;
+
 #include "SDL2/SDL.h"
 
 class Entity {
@@ -13,24 +16,29 @@ public:
 	void update();
 	void render();
 
-	enum vel { NONE = -2, ZERO = 0, ONE = 2 };
 	enum dir {RIGHT, LEFT};
 
 	SDL_Rect& getSrcRect();
 	SDL_Rect& getDestRect();
+	int getState() const;
 
-	int getState();
-	void changeState();
+	void increaseState();
+	void decreaseState();
 	void setState(int state);
+
 	void setDirection(SDL_RendererFlip flip);
 
-	void setVelocityX(vel vel);
-	void setVelocityY(vel vel);
+	int getVelocityX();
+
+	void increaseVelX();
+	void decreaseVelX();
+	void setVelX(int vel);
+	void setVelY(int vel);
 
 private:
 	struct{
-		vel x{ZERO};
-		vel y{ZERO};
+		int x{};
+		int y{};
 	} Velocity;
 
 	SDL_RendererFlip direction;
@@ -38,7 +46,7 @@ private:
 	int state;
 
 	struct {
-		SDL_Rect src;
-		SDL_Rect dest;
+		SDL_Rect src{NULL};
+		SDL_Rect dest{NULL};
 	} Rects;
 };

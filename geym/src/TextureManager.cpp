@@ -17,6 +17,6 @@ void TextureManager::clearTexture(SDL_Texture* texture) {
 
 void TextureManager::draw(SDL_Texture* texture, SDL_Rect* srcR, SDL_Rect* destR) {
 	if (SDL_RenderCopy(Game::renderer, texture, srcR, destR)) {
-		std::cout << "hata" << SDL_GetError() <<"\n";
+		std::cout << "Error: " << SDL_GetError() <<"\n";
 	}
 }
