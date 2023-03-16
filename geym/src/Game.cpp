@@ -5,11 +5,11 @@ std::vector<std::unique_ptr<Entity>> Game::entity_list;
 SDL_Renderer* Game::renderer = nullptr;
 bool Game::isRunning = false;
 
-KeyboardHandling handler;
-Map* map {nullptr};
-
-Game::Game() : window{ nullptr } {}
-Game::~Game() {}
+Game::Game() : window{ nullptr }, map{ nullptr }, keyHandler{nullptr} {}
+Game::~Game() {
+	delete map;
+	delete keyHandler;
+}
 
 int Game::init(const char* title, int width, int height) {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
@@ -28,9 +28,10 @@ int Game::init(const char* title, int width, int height) {
 		std::cout << "SDL could not initialized, SDL_Error:  " << SDL_GetError();
 		return -1;
 	}
+	map = new Map();
+	keyHandler = new KeyboardHandling();
 
 	std::unique_ptr<Entity> entity(new Entity("assets/Warrior_Idle.png", 0, 0));
-	map = new Map();
 	Game::entity_list.push_back(std::move(entity));
 
 	return 0;
@@ -52,7 +53,7 @@ void Game::update() {
 
 void Game::handle_events() {
 	for (auto& x : Game::entity_list) {
-		handler.handle(x);
+		keyHandler->handle(x);
 	}
 }
 
@@ -63,6 +64,5 @@ bool Game::running() {
 void Game::clear() {
 	SDL_DestroyRenderer(Game::renderer);
 	SDL_DestroyWindow(window);
-	delete map;
 	SDL_Quit();
 }

@@ -20,8 +20,8 @@ public:
 
 	SDL_Rect& getSrcRect();
 	SDL_Rect& getDestRect();
-	int getState() const;
 
+	int getState() const;
 	void increaseState();
 	void decreaseState();
 	void setState(int state);
@@ -29,6 +29,7 @@ public:
 	void setDirection(SDL_RendererFlip flip);
 
 	int getVelocityX();
+	//int getVelocityY();
 
 	void increaseVelX();
 	void decreaseVelX();

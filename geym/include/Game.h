@@ -27,5 +27,7 @@ public:
 	static bool isRunning;
 
 private:
+	Map* map;
+	KeyboardHandling* keyHandler;
 	SDL_Window* window;
 };
