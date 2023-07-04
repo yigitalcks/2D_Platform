@@ -3,6 +3,7 @@
 #include <vector>
 #include "SDL2/SDL.h"
 #include "SDL2_image/SDL_Image.h"
+#include "SDL2_ttf/SDL_ttf.h"
 #include "TextureManager.h"
 #include "Entity.h"
 #include "KeyboardHandling.h"
