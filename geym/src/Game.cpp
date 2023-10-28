@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Game.h"
 
-std::vector<std::unique_ptr<Entity>> Game::entity_list;
 SDL_Renderer* Game::renderer = nullptr;
 bool Game::isRunning = false;
 
@@ -52,7 +51,7 @@ int Game::init(const char* title, int width, int height) {
 	keyHandler = new KeyboardHandling();
 
 	std::unique_ptr<Entity> entity(new Entity("assets/Warrior_Idle.png", 0, 0));
-	Game::entity_list.push_back(std::move(entity));
+	entity_list.push_back(std::move(entity));
 
 	return 0;
 }
@@ -60,19 +59,19 @@ int Game::init(const char* title, int width, int height) {
 void Game::render() {
 	SDL_RenderClear(renderer);
 	map->renderMap();
-	for (auto& x : Game::entity_list) {
+	for (auto& x : entity_list) {
 		x->render();
 	}
 	SDL_RenderPresent(renderer);
 }
 void Game::update() {
-	for (auto& x : Game::entity_list) {
+	for (auto& x : entity_list) {
 		x->update();
 	}
 }
 
 void Game::handle_events() {
-	for (auto& x : Game::entity_list) {
+	for (auto& x : entity_list) {
 		keyHandler->handle(x);
 	}
 }

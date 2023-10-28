@@ -24,11 +24,11 @@ public:
 	bool running();
 
 	static SDL_Renderer* renderer;
-	static std::vector<std::unique_ptr<Entity>> entity_list;
 	static bool isRunning;
 
 private:
 	Map* map;
+	std::vector<std::unique_ptr<Entity>> entity_list;
 	KeyboardHandling* keyHandler;
 	SDL_Window* window;
 };
