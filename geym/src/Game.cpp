@@ -17,7 +17,7 @@ int Game::init(const char* title, int width, int height) {
 		return -1;
 	}
 	window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
-	renderer = SDL_CreateRenderer(window, -1, 0);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	if (!renderer) {
 		std::cout << "renderer coud not created, SDL_Error: " << SDL_GetError() << std::endl;
